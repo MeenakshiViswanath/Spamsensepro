@@ -1,0 +1,19 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SpamSense - Email Filter</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head><body>
+<nav><div class="logo">Spam<span>Sense</span></div><div><a class="active" href="/">Check Email</a><a href="/history">History</a></div></nav>
+<main>
+<h1>NLP-Based Intelligent Email Filter</h1><p class="sub">Paste an email below and SpamSense will classify it as Spam or Ham.</p>
+<div class="card">
+<textarea id="text" placeholder="Paste the email subject and body here..."></textarea>
+<div class="row"><button id="btn" onclick="check()">Analyze Email</button>
+<button class="secondary" onclick="sample('spam')">Load spam sample</button>
+<button class="secondary" onclick="sample('ham')">Load ham sample</button>
+<button class="secondary" onclick="clearAll()">Clear</button></div>
+<div id="err" class="err"></div></div>
+<div id="result" class="card result">
+<span id="badge" class="badge"></span> <span id="conf" style="margin-left:10px;color:var(--muted)"></span>
+<div class="bar"><div id="fill" style="width:0"></div></div>
+<div style="color:var(--muted);font-size:.85rem">Spam probability: <b id="sp"></b>%</div>
+<div style="margin-top:14px;color:var(--muted)">Key words influencing the decision:</div><div id="kw"></div></div>
+<div class="card"><h3 style="margin-top:0">Model Performance</h3><div class="grid" id="metrics"></div></div>
+</main><script src="{{ url_for('static', filename='script.js') }}"></script></body></html>

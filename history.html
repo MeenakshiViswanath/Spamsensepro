@@ -1,0 +1,11 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SpamSense - History</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head><body>
+<nav><div class="logo">Spam<span>Sense</span></div><div><a href="/">Check Email</a><a class="active" href="/history">History</a></div></nav>
+<main><h1>Classification History</h1><p class="sub">Stored in the database for every email checked.</p>
+<div class="grid" style="margin-bottom:20px">
+<div class="card stat"><div class="n" id="total">0</div><div class="l">Total checked</div></div>
+<div class="card stat"><div class="n" id="spam" style="color:var(--spam)">0</div><div class="l">Spam</div></div>
+<div class="card stat"><div class="n" id="ham" style="color:var(--ham)">0</div><div class="l">Ham</div></div></div>
+<div class="card"><div class="row" style="margin:0 0 12px"><button class="secondary" onclick="clearHist()">Clear history</button></div>
+<table><thead><tr><th>#</th><th>Email</th><th>Result</th><th>Confidence</th><th>Time</th></tr></thead><tbody id="rows"></tbody></table></div>
+</main><script src="{{ url_for('static', filename='script.js') }}"></script></body></html>
